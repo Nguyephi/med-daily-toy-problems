@@ -23,7 +23,6 @@ function permutation(s) {
         let remainingChar = s.slice(0, i) + s.slice(i + 1, s.length);
         // get word as result of permutation, called recursively
         for (let word of permutation(remainingChar)) {
-            console.log(char, word)
             result.push(char + word)
         }
     }
