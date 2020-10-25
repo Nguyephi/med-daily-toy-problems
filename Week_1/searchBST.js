@@ -20,10 +20,10 @@ let tree = require('../utils/binaryTree.js')
 //     return result
 // };
 
-
+// without helper function
 var searchBST = function (root, val) {
     if (root === null || root.val === val) return root
     return val < root.val ? searchBST(root.left, val) : searchBST(root.right, val)
 };
 
-console.log('hi', searchBST(tree, 2))
+console.log(searchBST(tree, 2))
