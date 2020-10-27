@@ -12,7 +12,7 @@
 //     return climbCombo(0, n)
 // };
 
-// Recursion with memoisation
+// Recursion with memoization
 var climbStairs = function (n) {
     let memo = [];
     function climbCombo(i, n, memo) {
