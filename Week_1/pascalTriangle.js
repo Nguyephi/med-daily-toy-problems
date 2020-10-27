@@ -17,20 +17,35 @@ var generate = function (numRows) {
 
 // console.log(generate(10))
 
+// Recursion
+// var getRow = function (rowIndex) {
+//     let result = [];
+//     // each row will have rowIndex + 1, when I loop I make i <= rowIndex
+//     for (let i = 0; i <= rowIndex; i++) {
+//         result.push(getNum(rowIndex, i))
+//     }
+
+//     return result
+// };
+
+// var getNum = function (row, col) {
+//     if (row === 0 || col === 0 || row === col) return 1;
+
+//     return getNum(row - 1, col - 1) + getNum(row - 1, col)
+// }
+
+// Memory-efficient Dynamic Programing
 var getRow = function (rowIndex) {
-    let result = [];
-    // each row will have rowIndex + 1
-    for (let i = 0; i <= rowIndex; i++) {
-        result.push(getNum(rowIndex, i))
+    let result = []
+    result.push(1)
+
+    for (let i = 0; i < rowIndex; i++) {
+        for (let j = i; j > 0; j--) {
+            result[j] = result[j] + result[j - 1]
+        }
+        result.push(1)
     }
-
     return result
-};
-
-var getNum = function (row, col) {
-    if (row === 0 || col === 0 || row === col) return 1;
-
-    return getNum(row - 1, col - 1) + getNum(row - 1, col)
 }
 
-console.log(getRow(3))
+console.log(getRow(30))
