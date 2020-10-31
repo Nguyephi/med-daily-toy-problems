@@ -1,3 +1,6 @@
+let tree = require('../utils/binaryTree').tree
+let tree2 = require('../utils/binaryTree').tree2
+
 var isValidBST = function (root) {
     function helper(node, lower, upper) {
         if (node === null) {
@@ -16,3 +19,7 @@ var isValidBST = function (root) {
     }
     return helper(root, null, null)
 };
+
+
+console.log(isValidBST(tree))
+console.log(isValidBST(tree2))

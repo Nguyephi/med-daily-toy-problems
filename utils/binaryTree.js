@@ -10,4 +10,15 @@ tree.left.right = new TreeNode(3)
 tree.left.left = new TreeNode(1)
 tree.right = new TreeNode(7)
 
-module.exports = tree;
+// not a valid BST
+let tree2 = new TreeNode(5)
+tree2.left = new TreeNode(1)
+tree2.right = new TreeNode(4)
+tree2.right.left = new TreeNode(3)
+tree2.right.right = new TreeNode(6)
+
+module.exports = {
+    tree,
+    tree2,
+    TreeNode
+}
